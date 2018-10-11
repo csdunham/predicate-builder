@@ -1,0 +1,86 @@
+.container {
+  background-color: #f1f1f1;
+  padding: 0.01em 16px;
+  margin: 20px 5px;
+  min-height: 80vh;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+  position: relative;
+}
+
+h4 {
+  margin: 4px;
+  color: #999999;
+  font-weight: normal;
+}
+
+hr {
+  border: 1px solid #cccccc;
+}
+
+button {
+  -webkit-appearance:none;
+  height: 25px;
+  vertical-align: center;
+  margin: 4px 0px;
+  height: 34px;
+}
+
+button:disabled,
+button[disabled]{
+  -webkit-appearance:none;
+  height: 25px;
+  vertical-align: center;
+  margin: 4px 0px;
+  height: 34px;
+  background-color: #dae4f2;
+  color: #333333;
+}
+
+button.add-button {
+  background-color: #138eca;
+  color: #fff;
+  margin-top: 15px;
+  width: 70px;
+}
+
+button.search-button {
+  background-color: #138eca;
+  color: #fff;
+  width: 156px;
+  position: absolute; 
+  right: 10px;
+  bottom: 20px;
+}
+
+.react-select-container {
+  /* color: #777777; */
+  display: inline-block;
+  font-size: small;
+  border-radius: 0px;
+  width: 200px;
+  margin: 4px 4px;
+  margin-top: 0px;
+  padding-top: 0px;
+  vertical-align: bottom;
+
+}
+
+
+input {
+  margin: 4px 4px;
+  border-radius: 0px;
+  padding: .5em .6em;
+  font: 400 14px system-ui;
+  color: #777;
+  display: inline-block;
+  border: 1px solid #dcdce3; 
+  vertical-align: middle;
+  box-sizing: border-box;
+  min-height: 36px;
+  outline: 1px !important;
+  -webkit-appearance:none; 
+}
+
+.error {
+    border: 2px solid #dd0909; 
+}
