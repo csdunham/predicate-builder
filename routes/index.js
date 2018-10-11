@@ -13,8 +13,12 @@ router.post("/buildquery", (req, res) => {
     querySQL = querySQL + buildQuery(req.body.predicates[idx], idx)
   }
 
+  res.status(200).json(querySQL)
+  //res.send(query.SQL);
+
   console.log (querySQL)
-    res.json(querySQL);
+  
+    //res.json(querySQL);
 });
 
 

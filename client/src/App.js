@@ -40,7 +40,7 @@ class PredicateBuilder extends React.Component {
         { value: 'text_in_list', label: 'in list', type: 'text'}
       ], 
       operationsListOptionsForNumbers: [
-        { value: 'number_range', label: 'range', type: 'number'},
+        { value: 'number_range', label: 'between', type: 'number'},
         { value: 'number_less_than_or_equal', label: 'less than or equal', type: 'number'},
         { value: 'number_equals', label: 'equals', type: 'number'},
         { value: 'number_greater_than_or_equal', label: 'greater than or equal', type: 'number'},
@@ -105,9 +105,7 @@ class PredicateBuilder extends React.Component {
   handleSubmit = (e) => {
     fetch('http://localhost:3001/buildquery', {
       method: "POST",
-      headers: {
-        'Content-type': 'application/json'
-      },
+      headers: { 'Content-type': 'application/json' },
       body: JSON.stringify(this.state)
     })
     .then((response) => response.json())
@@ -115,7 +113,10 @@ class PredicateBuilder extends React.Component {
       console.log(result)
       alert(`${result}`);
     })
-    //e.preventDefault();   
+    .catch(error => {
+      return error;
+    })
+    e.preventDefault();   
   }
 
   render() {
@@ -162,9 +163,6 @@ class PredicateBuilder extends React.Component {
                   value={predicate.value}
                   onChange={this.handleValueInputChange(idx)}
                 />
-              }
-              {(predicate.operator==='number_range') ?  
-                <button disabled={true}>between</button> : null
               }
               {(predicate.operator==='number_range') ?  
                 <input 
