@@ -159,7 +159,7 @@ class PredicateBuilder extends React.Component {
               {(predicate.operator==='number_range') ? null : 
                 <input 
                   label='value'
-                  className={ ( (predicate.sessionFieldType==='number' && !predicate.operator==='number_in_list' && isNaN(predicate.value)) || (predicate.sessionFieldType==='number' && predicate.operator==='number_in_list' && isNaN(predicate.value.split(",").join("")))) ? "error" : "" }
+                  className={ ( (predicate.sessionFieldType==='number' && predicate.operator!=='number_in_list' && isNaN(predicate.value)) || (predicate.sessionFieldType==='number' && predicate.operator==='number_in_list' && isNaN(predicate.value.split(",").join(""))) ) ? "error" : "" }
                   value={predicate.value}
                   onChange={this.handleValueInputChange(idx)}
                 />
